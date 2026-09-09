@@ -1,0 +1,17 @@
+#Dependencies
+node_modules
+.pnpm_store
+
+# bUild
+dist
+.next
+out
+
+#Environment Variables
+.env.local
+.env
+.env.production
+
+#system Files
+.DS_Store
+*.log

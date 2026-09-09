@@ -1,0 +1,16 @@
+{
+  "name": "bostonlanka-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "pnpm --recursive run dev",
+    "build": "pnpm --recursive run build"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0"
+  }
+}
