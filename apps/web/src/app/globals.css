@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --red: #d1181f;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-site-red: var(--red);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+.btn{
+  @apply cursor-pointer text-white;
+}
+.red-btn{
+  @apply flex gap-2 items-center uppercase cursor-pointer px-3 py-1 text-white text-sm bg-site-red rounded-[25px];
+}
+.b-line{
+  @apply  pb-2 border-b-3 border-transparent [border-image:linear-gradient(to_right,#d1181f,#004b8c)_1];
+}
+.temp .temp-type{
+  @apply text-[18px] ml-2;
+}
+.result{
+  background:linear-gradient(180deg, transparent, #def49c);
+}
+
+@media (max-width: 767px) {
+  .mobile-menu-wrapper{
+    @apply hidden w-full  fixed top-0 left-0 z-10 p-10;
+  }
+  .mobile-menu{
+    @apply w-full flex flex-col gap-3 items-end;
+  }
+  .menu-toggle span{
+    @apply block w-6 h-[1.5px] bg-[#C5A059] transition-all duration-300;
+  }
+
+}
