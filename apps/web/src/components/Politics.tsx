@@ -16,7 +16,7 @@ const Politics = ({articles}: {articles:NewsArticle[]}) => {
         <TwoColsPostCardSm articles={articles} />
        
       </div>
-      <CategoryFooterLink categoryName="Politic" categorySlug="sdsd" />
+      <CategoryFooterLink categoryName="Politic" categorySlug="politics" />
     </div>
   )
 }

@@ -43,13 +43,14 @@ const Weather = () => {
         <div className="result flex flex-col justify-center">
           <div className="flex flex-col items-center justify-center w-full">
             <div className="weather-image"></div>
+            
+          <div className="flex w-full justify-center">
+            <div className="temp text-2xl"></div>
+          </div>
             <div className="city uppercase text-[18px] font-bold"></div>
             <div className="description"></div>
           </div>
           
-          <div className="flex w-full justify-center">
-            <div className="temp text-2xl"></div>
-          </div>
         </div>
     </div>
   )

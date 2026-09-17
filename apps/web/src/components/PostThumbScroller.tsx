@@ -9,7 +9,7 @@ const PostThumbScroller = () => {
     <div className="flex gap-4 py-4 w-full max-w-[980px] mx-auto px-4">
         <Scroller autoPlay={true} options={{ loop: true, align: "start" }}>
         {posts.map((post:NewsArticle)=> (
-          <div key={post.slug} className="flex-[0_0_100%] sm:flex-[0_0_calc(50%-8px)] md:flex-[0_0_calc(25%-12px)] min-w-0 pb-10">
+          <div key={post.slug} className="flex-[0_0_100%] sm:flex-[0_0_calc(50%-8px)] md:flex-[0_0_calc(25%-12px)] min-w-0 md:pb-10">
             <PostThumbHorizCard key={post.slug} post={post} />
             </div>
         ))}

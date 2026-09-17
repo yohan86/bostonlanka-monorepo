@@ -44,8 +44,6 @@ export default function Home() {
 
   return (
     <>
-    <Header /> 
-    <PostThumbScroller />
     <div className="flex w-full max-w-[94%] lg:max-w-[980px] xl:max-w-[1200px] mx-auto justify-between">
       <div className="flex flex-col w-full md:w-3/4">
       
