@@ -5,6 +5,8 @@ const isProd = process.env.NODE_ENV === "production";
 
 const nextConfig: NextConfig = {
   output: "export",
+  trailingSlash: true,
+  basePath: isProd ? `/${repoName}` : "",
   images: {
     unoptimized: true, // Required for static export on GitHub Pages
     remotePatterns: [
@@ -22,8 +24,6 @@ const nextConfig: NextConfig = {
       },
     ],
   },
-  basePath: isProd ? `/${repoName}` : "",
-  assetPrefix: isProd ? `/${repoName}/` : "",
 };
 
 export default nextConfig;
