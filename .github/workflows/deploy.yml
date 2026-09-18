@@ -4,9 +4,6 @@ on:
   push:
     branches: ["main"]
 
-env:
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
-
 permissions:
   contents: read
   pages: write
@@ -24,11 +21,11 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      # 1. Setup pnpm FIRST so setup-node can handle pnpm caching
+      # Reads packageManager (pnpm@11.10.0) automatically from root package.json
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
 
-      # 2. Setup Node.js with caching enabled
+      # Sets Node.js runtime to 24 with pnpm caching enabled
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
@@ -38,11 +35,9 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
-      # 3. Use strict lockfile for predictable CI builds
       - name: Install Dependencies
         run: pnpm install --frozen-lockfile
 
-      # 4. Target the specific web app build command
       - name: Build Next.js Static Site
         run: pnpm --filter web build
 
