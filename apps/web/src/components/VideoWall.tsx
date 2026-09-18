@@ -4,6 +4,8 @@ import { useState } from 'react';
 import Image from 'next/image';
 import { FaPlay, FaVideo } from 'react-icons/fa';
 import CategoryFooterLink from './CategoryFooterLink';
+import Link from 'next/link';
+import { MdKeyboardDoubleArrowRight } from 'react-icons/md';
 
 export interface VideoItem {
   id: string;
@@ -156,7 +158,18 @@ export const VideoWall = ({ videos }: VideoWallProps) => {
       </div>
 
       {/* Footer Link */}
-      <CategoryFooterLink categoryName="Videos" categorySlug="videos" />
+          <div className="w-full pt-4 mt-4 border-t border-gray-100 flex justify-end">
+      <Link
+        href={`/videos`}
+        className="group inline-flex items-center gap-1.5 text-xs md:text-sm font-bold uppercase tracking-wider text-site-red hover:text-black transition-colors duration-200"
+      >
+        <span>More Videos</span>
+        <MdKeyboardDoubleArrowRight
+          size={18} 
+          className="transition-transform duration-300 group-hover:translate-x-1.5" 
+        />
+      </Link>
+    </div>
     </section>
   );
 };

@@ -1,3 +1,4 @@
+import { getImageUrl } from "@/lib/prefix"
 import { NewsArticle } from "@/types/types"
 import Image from "next/image"
 import Link from "next/link"
@@ -9,8 +10,8 @@ const PostThumbHorizCard = ({post}: {post:NewsArticle}) => {
     <div className="flex overflow-hidden shadow-xl items-center bg-white rounded-md">
         <div className="relative w-24 h-20 shrink-0">
             <Image 
-            src={post.featuredImage.node.sourceUrl} 
-            alt="" 
+            src={getImageUrl(post.featuredImage.node.sourceUrl)} 
+            alt={post.title}
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             fill className="object-cover" />
         </div>

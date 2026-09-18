@@ -12,10 +12,9 @@ interface PostPageProps {
   params: Promise<{ slug: string }>;
 }
 export async function generateStaticParams() {
-  const categories = ["politics", "latestnews", "business", "entertainment", "sports", "lifestyle", "usa", "travel"];
-
-  return categories.map((slug) => ({
-    slug,
+  const posts = await MOCK_POSTS;
+  return posts.map((post) => ({
+    slug: post.slug,
   }));
 }
 

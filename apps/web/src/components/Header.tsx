@@ -4,6 +4,7 @@ import Link from 'next/link'
 import NavBar from './NavBar'
 import MenuToggleBtn from './MenuToggleBtn'
 import CatNavBar from './CatNavBar'
+import { getImageUrl } from '@/lib/prefix'
 
 const Header = () => {
   return (
@@ -13,7 +14,7 @@ const Header = () => {
         <div className="flex justify-between">
           <Link href="/">
           <div className="relative w-[150px] h-[90px] shrink-0">
-            <Image src="/boston-lanka-logo.png" alt="boston lanka news site logo" fill className="object-container" />
+            <Image src={getImageUrl("/boston-lanka-logo.png")} alt="boston lanka news site logo" fill className="object-container" />
           </div>
           </Link>
           <div className="flex flex-col mt-3 mr-4 items-end md:m-0 md:items-center md:flex-row md:gap-3">

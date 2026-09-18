@@ -1,3 +1,4 @@
+import { getImageUrl } from '@/lib/prefix'
 import { NewsArticle } from '@/types/types'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -13,7 +14,7 @@ const TwoColsPostCardSm = ({articles}: {articles:NewsArticle[]}) => {
         <div key={post.slug} className="flex gap-2 w-full">
             <div className="relative w-[40%] md:w-[45%] h-20 md:h-28 shrink-0">
                 <Image 
-                src={post.featuredImage.node.sourceUrl} 
+                src={getImageUrl(post.featuredImage.node.sourceUrl)} 
                 alt={post.slug} 
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -31,7 +32,7 @@ const TwoColsPostCardSm = ({articles}: {articles:NewsArticle[]}) => {
                           <span>Watch</span>
                         </Link>
                       )}
-                    <Link href="#" aria-label={`view ${post.slug} details`} className="flex gap-2 items-center text-[12px] hover:gap-3 animate duration-300 text-site-red uppercase">Read more <MdKeyboardDoubleArrowRight size={14}  /></Link>
+                    <Link href={`/post/${post.slug}`} aria-label={`view ${post.slug} details`} className="flex gap-2 items-center text-[12px] hover:gap-3 animate duration-300 text-site-red uppercase">Read more <MdKeyboardDoubleArrowRight size={14}  /></Link>
                 </div>
             </div>
 

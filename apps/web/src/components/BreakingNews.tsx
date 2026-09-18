@@ -19,7 +19,7 @@ const BreakingNews = () => {
             <OneColPostCard key={post.slug} post={post} />
           ))}
       </div>
-      <CategoryFooterLink categoryName="Breaking news" categorySlug="sdsd" />
+      <CategoryFooterLink categoryName="Breaking news" categorySlug="breakingnews" />
     </div>
   )
 }

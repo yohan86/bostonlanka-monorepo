@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { FaFacebookF, FaYoutube, FaTwitter, FaEnvelope } from "react-icons/fa";
 import CatNavBar from "./CatNavBar";
+import {getImageUrl} from  "../lib/prefix"
 
 const CATEGORY_LINKS = [
   { name: "Politics", slug: "politics" },
@@ -26,7 +27,7 @@ export const Footer = () => {
           <Link href="/" className="text-2xl font-black text-white tracking-tight">
           </Link>
           <div className="relative w-[150px] h-[90px] shrink-0">
-            <Image src="/boston-lanka-logo.png" alt="boston lanka news site logo" fill className="object-container" />
+            <Image src={getImageUrl("/boston-lanka-logo.png")} alt="boston lanka news site logo" fill className="object-container" />
           </div>
           <p className="text-xs text-slate-400 leading-relaxed max-w-sm">
             Connecting the Sri Lankan diaspora in Greater Boston, New England, and worldwide with reliable news, cultural highlights, and community updates.
