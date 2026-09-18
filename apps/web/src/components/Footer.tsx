@@ -35,7 +35,7 @@ export const Footer = () => {
           {/* Social Links */}
           <div className="flex items-center gap-3 mt-2">
             <a
-              href="https://facebook.com"
+              href="https://web.facebook.com/bostonlanka/?_rdc=1&_rdr"
               target="_blank"
               rel="noopener noreferrer"
               className="w-8 h-8 rounded-full bg-slate-800 hover:bg-site-red text-white flex items-center justify-center transition-colors"
@@ -44,7 +44,7 @@ export const Footer = () => {
               <FaFacebookF size={14} />
             </a>
             <a
-              href="https://youtube.com"
+              href="https://www.youtube.com/Bostonlanka/"
               target="_blank"
               rel="noopener noreferrer"
               className="w-8 h-8 rounded-full bg-slate-800 hover:bg-site-red text-white flex items-center justify-center transition-colors"

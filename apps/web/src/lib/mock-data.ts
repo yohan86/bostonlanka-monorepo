@@ -121,7 +121,7 @@ export const MOCK_POSTS : NewsArticle[] = [
         altText: "Business Leaders Gathering"
       }
     },
-    videourl: "",
+    videourl: "dsd",
     category: "breakingnews"
   },
   {

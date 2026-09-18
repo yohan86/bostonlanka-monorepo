@@ -1,0 +1,59 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: ["main"]
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    environment: github-pages
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      # 1. Setup pnpm FIRST so setup-node can handle pnpm caching
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+
+      # 2. Setup Node.js with caching enabled
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+          cache: "pnpm"
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      # 3. Use strict lockfile for predictable CI builds
+      - name: Install Dependencies
+        run: pnpm install --frozen-lockfile
+
+      # 4. Target the specific web app build command
+      - name: Build Next.js Static Site
+        run: pnpm --filter web build
+
+      - name: Create .nojekyll File
+        run: touch ./apps/web/out/.nojekyll
+
+      - name: Upload Build Artifacts
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./apps/web/out
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

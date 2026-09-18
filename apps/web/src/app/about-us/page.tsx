@@ -128,7 +128,7 @@ export default function AboutUsPage() {
 
         {/* Sidebar Ads & Sticky Widget */}
         <aside className="hidden lg:flex lg:col-span-4 flex-col items-center">
-          <AdBannerSidebarSticky width="w-full max-w-[300px]" />
+          <AdBannerSidebarSticky width="w-full max-w-[250px]" />
         </aside>
       </div>
     </main>

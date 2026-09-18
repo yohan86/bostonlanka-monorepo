@@ -13,6 +13,14 @@ interface CategoryPageProps {
   params: Promise<{ slug: string }>;
 }
 
+export async function generateStaticParams() {
+  const categories = ["politics", "latestnews", "business", "entertainment", "sports", "lifestyle", "usa", "travel"];
+
+  return categories.map((slug) => ({
+    slug,
+  }));
+}
+
 export default async function CategoryPage({ params }: CategoryPageProps) {
   const { slug } = await params;
 
@@ -39,7 +47,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
         {/* Main Feed Column */}
-        <section className="lg:col-span-8 flex flex-col gap-6">
+        <section className="lg:col-span-9 flex flex-col gap-6">
           {categoryPosts.length === 0 ? (
             <div className="text-center py-12 bg-slate-50 rounded-lg border border-slate-200">
               <p className="text-slate-500 text-sm">
@@ -75,9 +83,6 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
                   {/* Text Details */}
                   <div className="flex flex-col justify-between flex-1">
                     <div>
-                      <span className="text-[10px] font-bold uppercase tracking-wider text-site-red mb-1 block">
-                        {post.category}
-                      </span>
                       <h2 className="text-base md:text-lg font-bold text-slate-900 group-hover:text-site-red transition-colors line-clamp-2 leading-snug">
                         <Link href={`/post/${post.slug}`}>{post.title}</Link>
                       </h2>
@@ -85,7 +90,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
                         {post.excerpt}
                       </p>
                     </div>
-                    <time className="text-[11px] text-slate-400 mt-3 block">
+                    <time className="text-[11px] text-slate-400 mt-2 block">
                       {formattedDate}
                     </time>
                   
@@ -94,7 +99,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
                       {post.videourl && (
                         <Link
                           href={`/post/${post.slug}`}
-                          className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-red-50 text-site-red border border-red-100 text-[10px] font-bold uppercase tracking-wider hover:bg-site-red hover:text-white transition-all duration-200"
+                          className="video-btn inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-red-50 text-site-red border border-red-100 text-[10px] font-bold uppercase tracking-wider hover:bg-site-red hover:text-white transition-all duration-200"
                         >
                           <FaPlayCircle size={11} />
                           <span>Watch</span>
@@ -124,7 +129,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
         </section>
 
         {/* Sidebar Ads */}
-        <aside className="hidden md:flex lg:col-span-4 flex-col items-center">
+        <aside className="hidden md:flex lg:col-span-3 flex-col items-center">
           <AdBannerSidebarSticky width="w-full max-w-[300px]" />
         </aside>
       </div>

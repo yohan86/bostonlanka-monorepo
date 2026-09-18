@@ -48,6 +48,10 @@ body {
   @apply hover:text-[#ffef00] transition-colors duration-300;
 }
 
+.video-btn{
+  @apply pt-1 inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-red-50 text-site-red border border-red-100 text-[10px] font-bold uppercase tracking-wider hover:bg-site-red hover:text-white transition-all duration-200;
+}
+
 @media (max-width: 767px) {
   .mobile-menu-wrapper{
     @apply hidden w-full h-full fixed inset-0 z-10 p-10;

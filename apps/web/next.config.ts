@@ -1,11 +1,14 @@
 import type { NextConfig } from "next";
 import path from "path/win32";
 
-const nextConfig: NextConfig = {
+const repoName = "bostonlanka-monorepo"; // Replace with your actual GitHub repository name
+const isProd = process.env.NODE_ENV === "production";
 
-    turbopack: {
-      root: path.resolve(__dirname, '../../'),
-    },
+const nextConfig: NextConfig = {
+  output: "export",
+  turbopack: {
+    root: path.resolve(__dirname, '../../'),
+  },
   /* config options here */
   images: {
     remotePatterns: [
@@ -19,7 +22,9 @@ const nextConfig: NextConfig = {
       },
       { protocol: "https", hostname: "img.youtube.com" },
     ]
-  }
+  },
+  basePath: isProd ? `/${repoName}` : "",
+  assetPrefix: isProd ? `/${repoName}/` : "",
 };
 
 export default nextConfig;

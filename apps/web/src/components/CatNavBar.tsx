@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
 const CatMenuItems = [
-  {name:"blvideos", label:"BL Videos", url:"/category/blvideos"},
+  {name:"blvideos", label:"BL Videos", url:"/videos"},
   {name:"latestnews", label:"Latest News", url:"/category/latestnews"},
   {name:"business", label:"Business", url:"/category/business"},
   {name:"politics", label:"Politics", url:"/category/politics"},

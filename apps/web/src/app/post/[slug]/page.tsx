@@ -11,6 +11,13 @@ import AdBannerLandscape from "@/components/AdBannerLandscape";
 interface PostPageProps {
   params: Promise<{ slug: string }>;
 }
+export async function generateStaticParams() {
+  const categories = ["politics", "latestnews", "business", "entertainment", "sports", "lifestyle", "usa", "travel"];
+
+  return categories.map((slug) => ({
+    slug,
+  }));
+}
 
 export default async function PostPage({ params }: PostPageProps) {
   const { slug } = await params;

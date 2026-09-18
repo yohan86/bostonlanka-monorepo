@@ -18,9 +18,17 @@ const OneColPostCard = ({post}: {post:NewsArticle}) => {
         </div>
         <div className="p-2">
             <h2 className="text-[12px] md:text-[14px] font-bold pb-3">{post.title}</h2>
-            <div className="flex flex-col gap-2 md:gap-3">
-                <button className="flex gap-2 items-center uppercase cursor-pointer text-[12px]">Watch Now <FaPlayCircle size={14} color="#d1181f" /></button>
-                <Link href="#" aria-label={`view ${post.slug} details`} className="flex gap-2 items-center text-[12px] hover:gap-3 animate duration-300 text-site-red uppercase">Read more <MdKeyboardDoubleArrowRight size={14}  /></Link>
+            <div className="flex  gap-2 md:gap-3">
+                {post.videourl && (
+                  <Link
+                    href={`/post/${post.slug}`}
+                    className="video-btn"
+                  >
+                    <FaPlayCircle size={11} />
+                    <span>Watch</span>
+                  </Link>
+                )}
+                <Link href="#" aria-label={`view ${post.slug} details`} className="flex gap-2 items-center text-[12px] hover:gap-3 hover:text-black animate duration-300 text-site-red uppercase">Read more <MdKeyboardDoubleArrowRight size={14}  /></Link>
             </div>
         </div>
 
