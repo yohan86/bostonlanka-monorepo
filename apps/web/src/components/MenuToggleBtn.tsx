@@ -30,8 +30,8 @@ const MenuToggleBtn = () => {
             <button className="fixed top-4 right-4"
           onClick={()=> setMobileMenuOpen(false) }
           >Close X</button>
-          <CatNavBar />
-          <NavBar />
+          <CatNavBar onClose={setMobileMenuOpen} />
+          <NavBar onClose={setMobileMenuOpen} />
     </div>
     </>
   )

@@ -23,7 +23,7 @@ export default function ContactUsPage() {
   };
 
   return (
-    <main className="container mx-auto px-4 py-8">
+    <main className="container mx-auto px-4 py-2">
       {/* Top Mobile Ad Banner */}
       <div className="block lg:hidden mb-6 flex justify-center">
         <AdBannerLandscape />
@@ -34,7 +34,7 @@ export default function ContactUsPage() {
         <span className="text-xs font-black uppercase tracking-widest text-site-red block mb-1">
           Get In Touch
         </span>
-        <h1 className="text-3xl md:text-2xl font-black uppercase tracking-tight text-slate-600">
+        <h1 className="text-xl md:text-2xl font-black uppercase tracking-tight text-slate-600">
           Contact Editorial
         </h1>
       </div>

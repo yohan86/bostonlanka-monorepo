@@ -8,6 +8,7 @@ import { NewsArticle } from "@/types/types";
 import { FaLongArrowAltRight, FaPlayCircle } from "react-icons/fa";
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 import AdBannerLandscape from "@/components/AdBannerLandscape";
+import { getImageUrl } from "@/lib/prefix";
 
 interface CategoryPageProps {
   params: Promise<{ slug: string }>;
@@ -72,7 +73,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
                     className="relative w-full sm:w-52 h-36 bg-slate-100 rounded overflow-hidden shrink-0"
                   >
                     <Image
-                      src={post.featuredImage.node.sourceUrl}
+                      src={getImageUrl(post.featuredImage.node.sourceUrl)}
                       alt={post.featuredImage.node.altText || post.title}
                       fill
                       sizes="(max-width: 640px) 100vw, 208px"

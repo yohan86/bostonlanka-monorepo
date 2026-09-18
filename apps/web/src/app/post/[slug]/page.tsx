@@ -7,6 +7,7 @@ import { MOCK_POSTS } from "@/lib/mock-data";
 import AdBannerSidebarSticky from "@/components/AdBannerSidebarSticky";
 import { NewsArticle } from "@/types/types";
 import AdBannerLandscape from "@/components/AdBannerLandscape";
+import { getImageUrl } from "@/lib/prefix";
 
 interface PostPageProps {
   params: Promise<{ slug: string }>;
@@ -61,7 +62,7 @@ export default async function PostPage({ params }: PostPageProps) {
 
           <div className="relative w-full h-[280px] sm:h-[420px] rounded-lg overflow-hidden bg-slate-100">
             <Image
-              src={post.featuredImage.node.sourceUrl}
+              src={getImageUrl(post.featuredImage.node.sourceUrl)}
               alt={post.featuredImage.node.altText || post.title}
               fill
               priority

@@ -15,7 +15,7 @@ export const metadata = {
 
 export default function AboutUsPage() {
   return (
-    <main className="container mx-auto px-4 py-8">
+    <main className="container mx-auto px-4 py-2">
       {/* Top Mobile Banner */}
       <div className="block lg:hidden mb-6 flex justify-center">
         <AdBannerLandscape />
@@ -26,7 +26,7 @@ export default function AboutUsPage() {
         <span className="text-xs font-black uppercase tracking-widest text-site-red block mb-1">
           Who We Are
         </span>
-        <h1 className="text-3xl md:text-2xl font-black uppercase tracking-tight text-slate-600">
+        <h1 className="text-xl md:text-2xl font-black uppercase tracking-tight text-slate-600">
           About Boston Lanka
         </h1>
       </div>
@@ -117,7 +117,7 @@ export default function AboutUsPage() {
               <p className="text-xs text-slate-400 mt-1">Get in touch with our editorial newsroom team directly.</p>
             </div>
             <Link
-              href="/contact-us"
+              href="/contact"
               className="px-5 py-2.5 bg-site-red text-white text-xs font-bold uppercase tracking-wider rounded-md hover:bg-red-700 transition-colors shrink-0 flex items-center gap-2"
             >
               <span>Contact Editorial</span>

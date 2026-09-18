@@ -2,6 +2,9 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
+interface CatNavProps{
+  onClose?: (value:boolean)=> void;
+}
 const CatMenuItems = [
   {name:"blvideos", label:"BL Videos", url:"/videos"},
   {name:"latestnews", label:"Latest News", url:"/category/latestnews"},
@@ -14,7 +17,7 @@ const CatMenuItems = [
   {name:"travel", label:"Travel", url:"/category/travel"},
 ]
 
-const CatNavBar = () => {
+const CatNavBar = ({onClose}:CatNavProps) => {
   const pathname = usePathname();
   return (
     <>
@@ -23,6 +26,7 @@ const CatNavBar = () => {
         return(
           <Link key={menu.name} href={menu.url}
           className={`${isActive ? "text-[#d1181f] md:text-[#ffef00]" : ""}`}
+          onClick={()=> onClose?.(false)}
           >{menu.label}</Link>
         )
       })}
